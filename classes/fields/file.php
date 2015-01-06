@@ -489,7 +489,7 @@ class PodsField_File extends PodsField {
         $editable = (boolean) $editable;
         $linked = (boolean) $linked;
         ?>
-    <li class="pods-file hidden" id="pods-file-<?php echo $id ?>">
+    <li class="pods-file pods-hidden" id="pods-file-<?php echo $id ?>">
         <?php echo PodsForm::field( $attributes[ 'name' ] . '[' . $id . '][id]', $id, 'hidden' ); ?>
 
         <ul class="pods-file-meta media-item">

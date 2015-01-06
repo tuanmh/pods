@@ -255,7 +255,7 @@ else
                         $list_<?php echo pods_clean_name( $attributes[ 'name' ] ); ?>.prepend( html );
 
                         if ( !$list_<?php echo pods_clean_name( $attributes[ 'name' ] ); ?>.is( ':visible' ) )
-                            $list_<?php echo pods_clean_name( $attributes[ 'name' ] ); ?>.show().removeClass( 'hidden' );
+                            $list_<?php echo pods_clean_name( $attributes[ 'name' ] ); ?>.show().removeClass( 'pods-hidden' );
 
                         $list_<?php echo pods_clean_name( $attributes[ 'name' ] ); ?>.find( 'li.pods-file:first' ).slideDown( 'fast' );
 

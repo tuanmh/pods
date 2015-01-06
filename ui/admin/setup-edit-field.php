@@ -50,7 +50,7 @@
     <td class="pods-manage-row-label">
         <strong> <a class="pods-manage-row-edit row-label" title="<?php esc_attr_e( 'Edit this field', 'pods' ); ?>" href="#edit-field">
             <?php echo esc_html( pods_var_raw( 'label', $field ) ); ?>
-        </a> <abbr title="required" class="required<?php echo ( 1 == pods_var_raw( 'required', $field ) ? '' : ' hidden' ); ?>">*</abbr> </strong>
+        </a> <abbr title="required" class="required<?php echo ( 1 == pods_var_raw( 'required', $field ) ? '' : ' pods-hidden' ); ?>">*</abbr> </strong>
 
         <?php
         if ( '__1' != pods_var( 'id', $field ) ) {

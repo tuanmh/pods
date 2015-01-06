@@ -116,7 +116,7 @@
 
                                         <div class="pods-pick-values pods-pick-checkbox">
                                             <ul id="custom-capabilities">
-                                                <li class="pods-repeater hidden">
+                                                <li class="pods-repeater pods-hidden">
                                                     <?php echo PodsForm::field( 'custom_capabilities[--1]', '', 'text' ); ?>
                                                 </li>
                                                 <li>

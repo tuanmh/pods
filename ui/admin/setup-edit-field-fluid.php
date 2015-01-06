@@ -10,7 +10,7 @@ $pick_object = trim( pods_var( 'pick_object', $field ) . '-' . pods_var( 'pick_v
     <td class="pods-manage-row-label">
         <strong> <a class="pods-manage-row-edit row-label" title="<?php esc_attr_e( 'Edit this field', 'pods' ); ?>" href="#edit-field">
             <?php _e( 'New Field', 'pods' ); ?>
-        </a> <abbr title="required" class="required hidden">*</abbr> </strong>
+        </a> <abbr title="required" class="required pods-hidden">*</abbr> </strong>
 
         <div class="row-actions">
             <span class="edit">

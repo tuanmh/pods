@@ -76,7 +76,7 @@ function pods_attachments ( src, file_limit ) {
         pods_file_context.prepend( tmpl( binding ) );
 
         if ( !pods_file_context.is( ':visible' ) )
-            pods_file_context.show().removeClass( 'hidden' );
+            pods_file_context.show().removeClass( 'pods-hidden' );
 
         pods_file_context.find( 'li#pods-file-' + wp_media_id ).slideDown( 'fast' );
 

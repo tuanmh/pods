@@ -305,7 +305,7 @@ if ( isset( $_GET[ 'do' ] ) ) {
                     $pods_i++;
                 }
             ?>
-            <tr class="no-items<?php echo ( 1 < $pods_i ? ' hidden' : '' ); ?>">
+            <tr class="no-items<?php echo ( 1 < $pods_i ? ' pods-hidden' : '' ); ?>">
                 <td class="colspanchange" colspan="4">No fields have been added yet</td>
             </tr>
         </tbody>

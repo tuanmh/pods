@@ -266,7 +266,7 @@
 
                         <span id="import-export"></span>
 
-                        <div class="stuffbox hidden" id="import-export-results">
+                        <div class="stuffbox pods-hidden" id="import-export-results">
                             <h3><label for="link_name"><?php _e( 'Results', 'pods' ); ?></label></h3>
 
                             <div class="inside pods-manage-field pods-dependency">
