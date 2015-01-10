@@ -873,6 +873,7 @@ class PodsInit {
         if ( empty( self::$version ) || version_compare( self::$version, PODS_VERSION, '<' ) || version_compare( self::$version, PODS_DB_VERSION, '<=' ) || self::$upgrade_needed )
             $this->setup();
         elseif ( self::$version != PODS_VERSION ) {
+            pods_error( __FILE__.__LINE__);
             delete_option( 'pods_framework_version' );
             add_option( 'pods_framework_version', PODS_VERSION, '', 'yes' );
 
@@ -1013,6 +1014,7 @@ class PodsInit {
         delete_option( 'pods_framework_db_version' );
         add_option( 'pods_framework_db_version', PODS_DB_VERSION, '', 'yes' );
 
+        pods_error( __FILE__.__LINE__);
         pods_api()->cache_flush_pods();
 
         // Restore DB table prefix (if switched)
