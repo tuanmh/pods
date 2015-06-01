@@ -573,6 +573,7 @@ class PodsView {
 
 		// Keep it safe
 		$_view = trim( str_replace( array( '../', '\\' ), array( '', '/' ), (string) $_view ) );
+		$_view = preg_replace( '/\/+/', '/', $_view );
 
 		if ( empty( $_view ) ) {
 			return false;

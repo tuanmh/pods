@@ -14,9 +14,9 @@
 
 <ol class="pods_single_widget_form">
     <li>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"> <?php _e( 'Title', 'pods' ); ?></label>
+        <label for="<?php echo $this->get_field_id( 'title' ); ?>"> <?php _e( 'Title', 'pods' ); ?></label>
 
-        <input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $title ); ?>" />
+        <input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
     </li>
 
     <li>
@@ -24,14 +24,15 @@
             $api = pods_api();
             $all_pods = $api->load_pods( array( 'names' => true ) );
         ?>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'pod_type' ) ); ?>">
+        <label for="<?php echo $this->get_field_id( 'pod_type' ); ?>">
             <?php _e( 'Pod', 'pods' ); ?>
         </label>
 
         <?php if ( 0 < count( $all_pods ) ): ?>
-            <select id="<?php echo esc_attr( $this->get_field_id( 'pod_type' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'pod_type' ) ); ?>">
+            <select id="<?php $this->get_field_id( 'pod_type' ); ?>" name="<?php echo $this->get_field_name( 'pod_type' ); ?>">
                 <?php foreach ( $all_pods as $pod_name => $pod_label ): ?>
-                    <option value="<?php echo esc_attr( $pod_name ); ?>"<?php selected( $pod_name, $pod_type ); ?>>
+                    <?php $selected = ( $pod_name == $pod_type ) ? 'selected' : ''; ?>
+                    <option value="<?php echo $pod_name; ?>" <?php echo $selected; ?>>
                         <?php echo esc_html( $pod_label . ' (' . $pod_name . ')' ); ?>
                     </option>
                 <?php endforeach; ?>
@@ -42,11 +43,11 @@
     </li>
 
     <li>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'slug' ) ); ?>">
+        <label for="<?php echo $this->get_field_id( 'slug' ); ?>">
             <?php _e( 'Slug or ID', 'pods' ); ?>
         </label>
 
-        <input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'slug' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'slug' ) ); ?>" value="<?php echo esc_attr( $slug ); ?>" />
+        <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'slug' ); ?>" name="<?php echo $this->get_field_name( 'slug' ); ?>" value="<?php echo esc_attr( $slug ); ?>" />
     </li>
 
     <?php
@@ -56,12 +57,13 @@
             <?php
                 $all_templates = (array) $api->load_templates( array() );
             ?>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'template' ) ); ?>"> <?php _e( 'Template', 'pods' ); ?> </label>
+            <label for="<?php echo $this->get_field_id( 'template' ); ?>"> <?php _e( 'Template', 'pods' ); ?> </label>
 
-            <select name="<?php echo esc_attr( $this->get_field_name( 'template' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'template' ) ); ?>">
+            <select name="<?php echo $this->get_field_name( 'template' ); ?>" id="<?php echo $this->get_field_id( 'template' ); ?>">
                 <option value="">- <?php _e( 'Custom Template', 'pods' ); ?> -</option>
                 <?php foreach ( $all_templates as $tpl ): ?>
-                    <option value="<?php echo esc_attr( $tpl[ 'name' ] ); ?>"<?php selected( $tpl[ 'name' ], $template ); ?>>
+                    <?php $selected = ( $tpl[ 'name' ] == $template ) ? 'selected' : ''; ?>
+                    <option value="<?php echo $tpl[ 'name' ]; ?>" <?php echo $selected; ?>>
                         <?php echo esc_html( $tpl[ 'name' ] ); ?>
                     </option>
                 <?php endforeach; ?>
@@ -72,17 +74,17 @@
         else {
     ?>
         <li>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'template' ) ); ?>"> <?php _e( 'Template', 'pods' ); ?> </label>
+            <label for="<?php echo $this->get_field_id( 'template' ); ?>"> <?php _e( 'Template', 'pods' ); ?> </label>
 
-            <input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'template' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'template' ) ); ?>" value="<?php echo esc_attr( $template ); ?>" />
+            <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'template' ); ?>" name="<?php echo $this->get_field_name( 'template' ); ?>" value="<?php echo esc_attr( $template ); ?>" />
         </li>
     <?php
         }
     ?>
 
     <li>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'template_custom' ) ); ?>"> <?php _e( 'Custom Template', 'pods' ); ?> </label>
+        <label for="<?php echo $this->get_field_id( 'template_custom' ); ?>"> <?php _e( 'Custom Template', 'pods' ); ?> </label>
 
-        <textarea name="<?php echo esc_attr( $this->get_field_name( 'template_custom' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'template_custom' ) ); ?>" cols="10" rows="10" class="widefat"><?php echo esc_html( $template_custom ); ?></textarea>
+        <textarea name="<?php echo $this->get_field_name( 'template_custom' ); ?>" id="<?php echo $this->get_field_id( 'template_custom' ); ?>" cols="10" rows="10" class="widefat"><?php echo esc_html( $template_custom ); ?></textarea>
     </li>
 </ol>

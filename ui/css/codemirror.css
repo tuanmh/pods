@@ -162,7 +162,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   position: relative;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  z-index: 0;
 }
 .CodeMirror-sizer {
   position: relative;
